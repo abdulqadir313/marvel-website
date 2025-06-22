@@ -1,0 +1,166 @@
+.marvel-comics-section {
+  padding: 3rem 2vw 2rem 2vw;
+  background: #191919;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e62429;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.comics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.comic-card {
+  background: #222;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comic-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(230,36,41,0.18);
+}
+
+.comic-cover {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  background: #111;
+}
+
+.comic-info {
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.comic-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: #fff;
+}
+
+.comic-volume {
+  color: #e62429;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0 0 0.3rem 0;
+}
+
+.comic-date {
+  color: #aaa;
+  font-size: 0.85rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.comic-description {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Loading State */
+.comics-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0;
+  gap: 1rem;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #333;
+  border-top: 3px solid #e62429;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.comics-loading p {
+  color: #aaa;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Error State */
+.comics-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0;
+  gap: 1rem;
+  text-align: center;
+}
+
+.comics-error p {
+  color: #e62429;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.retry-btn {
+  background: #e62429;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.retry-btn:hover {
+  background: #b71c1c;
+}
+
+@media (max-width: 900px) {
+  .comics-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.2rem;
+  }
+  .comic-cover {
+    height: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .marvel-comics-section {
+    padding: 2rem 1vw 1rem 1vw;
+  }
+  .section-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  .comic-cover {
+    height: 140px;
+  }
+  .comic-info {
+    padding: 0.8rem;
+  }
+  .comic-info h3 {
+    font-size: 1rem;
+  }
+} 
